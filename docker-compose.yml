@@ -1,0 +1,11 @@
+services:
+  difuze-with-kernel:
+    build: 
+      context: .
+      dockerfile: ./difuze-docker-full
+    container_name: difuze
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/bash
+    volumes:
+      - /home/experimentos/Desktop/dwappner/linux:/difuze/kernel

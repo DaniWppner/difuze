@@ -1,0 +1,15 @@
+FROM machiry/difuzecommon
+
+# Install Bear dependency
+WORKDIR /
+RUN git clone https://github.com/Machiry/Bear.git
+WORKDIR /Bear
+RUN cmake . && make install
+
+# Pull latest difuze version
+WORKDIR /difuze/repo
+RUN git pull
+
+# Install dependencies to build linux
+RUN apt-get install -y --no-install-recommends \
+    libelf-dev bison flex bc libssl-dev
