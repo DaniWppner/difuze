@@ -8,4 +8,6 @@ services:
     tty: true
     entrypoint: /bin/bash
     volumes:
-      - /home/experimentos/Desktop/dwappner/linux:/difuze/kernel
+      - /path/to/linux:/difuze/kernel
+      - /path/to/difuze/out:/difuze/out
+      - /path/to/difuze:/difuze/repo
